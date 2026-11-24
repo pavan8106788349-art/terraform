@@ -48,7 +48,7 @@ variable "cidr_blocks" {
 variable "sg_tags" {
   type = map(string)
   default = {
-    Name        = "allow-all-terraform"
+    Name        = "allow-all-terraform2"
     project     = "roboshop"
     Terraform   = "true"
     Environment = "dev"
