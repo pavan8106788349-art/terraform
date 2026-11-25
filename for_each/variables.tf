@@ -1,9 +1,23 @@
+# variable "instances" {
+#     type = map
+#     default = {
+#         mongodb  = "t3.micro"
+#         mysql    = "t3.small"
+#         user     = "t3.micro"
+#         shipping = "t3.small"
+#     }
+# }
+
+# This should be converted into set
 variable "instances" {
-    type = map
-    default = {
-        mongodb = "t3.micro"
-        mysql = "t3.small"
-        user = "t3.micro"
-        shipping = "t3.small" 
-    }
+    type = list
+    default = ["mongodb", "redis"]
+}
+
+variable "zone_id" {
+   default = "Z02847951R6DDEZ150FJO"
+}
+
+variable "domain_name" {
+    default = "daws88s.quest"
 }
