@@ -1,12 +1,9 @@
 resource "aws_instance" "example" {
-  ami           = "ami-0055977a6e828a4f4"
-  instance_type = "t3.micro"
+  ami           = local.ami_id
+  instance_type = local.instance_type
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
-  tags = {
-    Name    = "terraform-state-demo"
-    project = "roboshop"
-  }
+  tags = local.ec2_final_tags
 }
 
 resource "aws_security_group" "allow_tls" {
