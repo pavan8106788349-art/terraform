@@ -1,7 +1,7 @@
 
 resource "aws_instance" "example" {
   #for_each = var.instances
-  for_each = toset[var.instances]
+  for_each = toset(var.instances)
   ami           = "ami-0055977a6e828a4f4"
   #instance_type =  each.value
   instance_type = "t3.micro"
